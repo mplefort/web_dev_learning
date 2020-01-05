@@ -1,0 +1,32 @@
+Tag Syntax
+
+<tag> content </tag>
+<br \> self closing
+<br> find in HTML53
+
+Structure
+
+<html>
+    head
+        Page title, meta data, keywords for search engines
+    body
+        paragraphs, headers, etc.
+</html>
+
+Example:
+    <!DOCTYPE html> - type of html5
+
+Tag Attributes
+
+<tag> attributename="attributevalue"> content </tag>
+
+
+HTML5 Semantic Tags - Tags with meaning for broswer and developer
+<header>
+<footer>
+<aside>
+<main>
+<article>
+<nav>
+<section>
+<details>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> HTML Cheat Sheet </title>
+</head>
+
+<body>
+    <a href="sematics.html">Go to sematics blog</a>
+    <!-- Comments -->
+    <h1> Heading One </h1>
+    <h2> Heading 2 </h2>
+    <h3> Heading 3 </h3>
+    <h4> Heading 4 </h4>
+    <h5> Heading 5 </h5>
+    <h6> Heading 6 </h6>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolor architecto, omnis mollitia, <strong>
+            incidunt </strong> id eum autem, natus consectetur <em> aliquam </em> aliquid. Saepe odio iusto, ea
+        molestiae eos ab quia tempora?
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur <a href="http://google.com" target="_blank"> google </a> adipisicing
+        elit. Cupiditate sit pariatur est fugiat molestias, ipsum dolor eligendi eius at ratione aut eaque, nisi rem
+        excepturi dolores voluptatem, aspernatur ut natus.
+    </p>
+
+    <!-- List -->
+    <ul>
+        <li> List Item 1 </li>
+        <li> List Item 2 </li>
+        <li> List Item 3 </li>
+        <li> List Item 4 </li>
+    </ul>
+
+    <ol>
+        <li> List Item 1 </li>
+        <li> List Item 2 </li>
+        <li> List Item 3 </li>
+        <li> List Item 4 </li>
+    </ol>
+
+    <!-- Tables -->
+    <table>
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Email </th>
+                <th> Age </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td> Matt LeFort </td>
+                <td> @gmail.com </td>
+                <td> 28 </td>
+            </tr>
+            <tr>
+                <td> Matt LeFort </td>
+                <td> @gmail.com </td>
+                <td> 28 </td>
+            </tr>
+            <tr>
+                <td> Matt LeFort </td>
+                <td> @gmail.com </td>
+                <td> 28 </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+    <!-- FOrms Post - to server (more secure), Get - to URL (not to a server)-->
+    <form action="process.php" method="POST">
+        <div>
+            <label> First name </label>
+            <input type="text" name="firstName" placeholder="Enter First name">
+        </div>
+        <br>
+        <div>
+            <label> Last name </label>
+            <input type="text" name="lastName">
+        </div>
+        <br>
+        <div>
+            <!-- type=email gives sematic value for valid email-->
+            <label> email </label>
+            <input type="email" name="email" value="default@gmail.com">
+        </div>
+        <br>
+        <div>
+            <label> Message </label>
+            <textarea name="message"></textarea>
+        </div>
+        <br>
+        <div>
+            <label> Gender </label>
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <!-- Default value="30" -->
+            <label> Age </label>
+            <input type="number" name="age" value="30">
+        </div>
+        <br>
+        <div>
+            <label> Birthday name </label>
+            <input type="date" name="birthday">
+        </div>
+        <br>
+        <input type="submit" name="submit" value"Submit">
+    </form>
+
+    <!-- Button not doing naything. Need backend code click="someFunction"-->
+    <button> Click Me </button>
+
+    <!-- Image -->
+    <br>
+    <a href="Images/20150418_184747.jpg">
+        <img src="Images/20150418_184747.jpg" alt="my sample image" width="200">
+    </a>
+
+    <!-- Quotations -->
+    <blockquote cite="http://traversysmedia.com">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio quam, quisquam animi corporis dignissimos
+        necessitatibus quod assumenda hic nemo eligendi aut vel officia asperiores dolorem. Eum, nihil eligendi.
+        Temporibus, dicta.
+    </blockquote>
+    <p> the <abbr title="world wide web">WWW</abbr> </p>
+    <p> <cite> HTML crash course  </cite>by Brad </p>
+
+    <!-- Add some whitespace underneath -->
+    <div style="margin-top:500 px"></div>
+</body>
+
+</html>
