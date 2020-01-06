@@ -1,0 +1,20 @@
+Lec 2.1 - Doc. Obj. Model (DOM)
+1. DOM
+    a. Common tree like struct pages to follow
+    b. Doc
+        - root html
+            - head
+                - title
+                - text
+            - body
+             -
+2. Doctype
+    a. HTML5 <!DOCTYPE html>
+3. head
+    b. meta data - language, title (browser tab)
+    c. Support files - JS, CSS, Addons
+    d. not displayed
+4. body
+    a. bulk of pages
+5. Validating files
+    a. validator.w3.org
