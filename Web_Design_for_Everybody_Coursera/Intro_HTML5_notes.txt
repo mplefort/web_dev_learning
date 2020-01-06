@@ -18,3 +18,58 @@ Lec 2.1 - Doc. Obj. Model (DOM)
     a. bulk of pages
 5. Validating files
     a. validator.w3.org
+
+Week 2 - Font Awesome
+
+Week2 - Multimedia
+<video>
+    atrributes: height, width, autoplay, loop, controls, alt-text
+<audio>
+    link to file .mp3 or .wav
+    attribs: autoplay, controls, loop, buffered, muted, volume
+    Setting clip - .ext#t=5,25 
+
+Week2 - Tables
+1. Only use if you have DATA not for layout
+2. sketch out a layout first (excel first)
+3. what number of cells in a row, combined cells
+4. Tags:
+    + <table> - attribs - border 
+    + table row <tr>
+    + table data cell <td> 
+    + table header <th>
+    + rowspan="#" number of cells to span
+    + caption <caption> tag for semantic
+    + <thead> <tbody> <tfoot>
+5.  check for unclosed tags
+
+Week2 - Useful Tags
+1. Block tags
+    - header, nav, footer, figure
+    - Containers
+        + article, aside, section main,
+    - hr, address (italic, physical address), blockquote (quote someone), details with summary (open/collapse)
+2. Inline tags
+    - spana
+    - cite - webiste address
+    - abbr - hover over for more info
+    - time - phone knows its a date, google links to time
+    - code - diff font
+    - sub - subscript
+    - sup - superscript
+3. Tags that need programming
+    - button - button
+    - meter - actual meter bar (min, max, value)
+    - <progress> - progress bar ()
+    - <iframe> - webpage inside your page.
+    - <bdo> attriburte dir (ltr or rtl). Bidirectional orienation text direction.
+    - <map> with <area> - clicable element in image but needs JS
+4. Review
+    - Keep tags simple as possible.
+    - Confirm in works on all browswers/devices
+    - Validate your code
+
+Week 3 - Accessiblity
+
+
+
