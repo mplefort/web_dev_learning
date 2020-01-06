@@ -1,0 +1,18 @@
+Model Concept
+    - Direction-agnostic
+    - alter item width/height to best fit in its containers of free spcae
+    - small scale layouts while grid specfication is for large scale
+
+Flex Properties:
+display: flex | inline-flex
+flex-direction: row | column
+flex-wrap: wrap | nowrap | wrapreverse
+flex-basis: <length> (width)
+justify-content: flex-start | flex-end | center
+align-self: felx-start | flex-end | center
+alighn-items: ""
+align-content: ""
+flex-grow: <number> elements in row diff sizes
+flex-shrink: <number> ""
+flex: <integer> ""
+order: <integer>

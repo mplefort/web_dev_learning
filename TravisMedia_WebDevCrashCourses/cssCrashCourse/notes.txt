@@ -1,0 +1,44 @@
+Fundamentals only covered
+
+What is CSS
+ - Cascading Stylesheets
+ - styling language (not programming)
+ - extended with Sass/Less, variables and conditionals
+ 
+ 3 Methods for Adding CSS
+  - Inline CSS: Direclty in HTML element (NO!)
+  - Internal CSS: Using <style> tags within the HTML document (not best practice)
+  - External CSS: Linking an external .css file (Best Practice)
+
+  Syntax
+  selector {property: value;}
+
+  Colors in CSS
+  - Color names - red, green
+  - html5 colors = coral, rose
+  - hexadeciam = #00ff00
+  - rgb(0, 0, 255)
+
+  Web Safe Fonts
+  - Arial
+  - Times new roman
+  - Courier
+  - Georgia
+  - Verdana
+
+  Standard for class and ID
+  - ID is unique
+  - class - applies sytle to multiple places
+
+  Maargin and Padding:
+  Box model - 
+  from inside out:
+    - Content -> Padding (T,R,B,L) -> Border (T,R,B,L) -> Margin (T,R,B,L)
+
+Positioning
+    - static - default in order
+    - relative - rel to normal position
+    - absolute - target position inside relative element
+    - fixed to window no matter scroll position
+    - initial - set to default value
+    - inherit - from another element
