@@ -1,0 +1,8 @@
+Making a myTunes (iTunes mockup)
+
+codepen navbar - https://codepen.io/neilso/pen/ziwgI
+Smartmockup.com - place design photos onto a smartphone/laptop nicely
+CSS-grid for footers and variables
+
+Beginner project
+
