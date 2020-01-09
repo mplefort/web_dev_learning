@@ -1,0 +1,7 @@
+Mobile first - design for mobile application first then use media queries to move to larger screens.
+
+
+Design:
+Do all HTML first then style site
+
+Unsplash - free high qaulity photos with url input for images to site. Gives random images
