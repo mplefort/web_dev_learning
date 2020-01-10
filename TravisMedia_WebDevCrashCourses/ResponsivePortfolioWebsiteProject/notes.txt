@@ -1,0 +1,12 @@
+Overview:
+    npn - node package manager
+        node-sass - sass compiler
+    CSS menu
+        transistions and transform property
+        overlay 
+    About page
+        grid css
+    My work
+        grid css
+    Mobile responsive
+        Home, mywork, about me all vertical stacked when 
