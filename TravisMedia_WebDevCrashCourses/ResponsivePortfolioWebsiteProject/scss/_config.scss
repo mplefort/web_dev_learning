@@ -1,0 +1,35 @@
+$primary-color: #444;
+$secondary-color: #eece1a;
+$show-home-image: true;
+$home-image: url(/TravisMedia_WebDevCrashCourses/ResponsivePortfolioWebsiteProject/dist/img/background.jpg);
+// $home-image: url(../dist/img/background.jpg);
+$background-opacity: 0.8;
+
+@mixin easeOut {
+  // what to change (properties within this class), time, motion type
+  transition: all 0.5s ease-out;
+}
+
+@mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      // fit to screen container
+      background-size: cover;
+
+      // pseudo variable
+      &::after {
+        // can add content but won't
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary-color, $background-opacity);
+      }
+    }
+  }
+}
