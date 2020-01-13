@@ -101,7 +101,7 @@
 
   //   slide nav items in from side
   .nav-item {
-    transform: translate3d(600%, 0, 0);
+    transform: translate3d(600px, 0, 0);
     @include easeOut();
 
     &.show {
