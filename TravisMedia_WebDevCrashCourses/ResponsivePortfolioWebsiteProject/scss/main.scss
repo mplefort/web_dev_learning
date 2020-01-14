@@ -54,7 +54,7 @@ header {
 main {
   padding: 4rem;
   // height: 100%;
-  min-height: calc(100vh-60px);
+  min-height: calc(100vh - 60px);
 
   &#home {
     // no scroll bar
@@ -113,6 +113,83 @@ main {
   }
 }
 
+// Work projects
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem;
+
+  img {
+    grid-area: projectimg;
+
+    width: 200%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut();
+    }
+  }
+
+  .item {
+    display: grid;
+    grid-template-areas:
+      "projectimg projectimg"
+      "btn-dark btn-light";
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Contact Page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut();
+    &:hover {
+      background: $secondary-color;
+      padding: 1rem 2rem;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+// button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  // margin: auto;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+.btn-dark {
+  grid-area: btn-dark;
+  // extend from .btn
+  background: darken($primary-color, 50);
+  color: #fff;
+  @extend .btn;
+}
+.btn-light {
+  grid-area: btn-light;
+  background: lighten($primary-color, 50);
+  color: #333;
+  @extend .btn;
+}
 #main-footer {
   text-align: center;
   padding: 1rem;
