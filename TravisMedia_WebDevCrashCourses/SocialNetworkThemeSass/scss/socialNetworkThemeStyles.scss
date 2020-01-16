@@ -1,0 +1,86 @@
+// default styleing - separate file for vars, mixings, functions
+@import "config";
+@import "utilities";
+
+// resets and core styles
+* {
+  // includes padding/border inside element width/ht values
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+// link defualts
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  // defualt - img to take up full widht of containter without breakign out
+  width: 100%;
+}
+
+.navbar {
+  // flex v. grid
+  // gird for main layout, profile page boxes.
+  // aligning text inside a component - flex.
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  border-bottom: solid 1px $primary-color;
+  opacity: 0.9;
+  width: 100%;
+
+  //   sass lets us nest selectors
+  ul {
+    display: flex;
+  }
+
+  a {
+    color: #fff;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+  }
+
+  a:hover {
+    color: $primary-color;
+  }
+}
+
+// landing
+.landing {
+  position: relative;
+  background: url("../../TravisMedia_WebDevCrashCourses/SocialNetworkThemeSass/img/showcase.jpeg")
+    no-repeat center center/cover;
+  height: 100vh;
+
+  &-inner {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
