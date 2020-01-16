@@ -1,0 +1,13 @@
+body {
+  background-color: #f2f2f2;
+  margin: 1%;
+  padding: 1%;
+}
+
+nav {
+  border: 1px solid #06425c;
+  color: #06425c;
+  background-color: #ffffff;
+  overflow: auto;
+  padding-left: 8%;
+}

@@ -1,0 +1,175 @@
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+body {
+  /* margin: 25px; */
+  margin: 0 auto;
+}
+
+header {
+  height: 175px;
+  background-image: url(../img/flywheel.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 10px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* padding: 3rem; */
+
+  text-align: center;
+  justify-items: center;
+  margin: 0 auto;
+  font-size: 1rem;
+  gap: 3rem;
+  /* background: red; */
+}
+
+nav a {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn {
+  padding: 1rem;
+  color: #000;
+  /* gives break and not extend entire container */
+  display: inline-block;
+  border-radius: 5px;
+  width: 100px;
+}
+
+nav a.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: top;
+  padding: 50px;
+  background-color: rgb(66, 117, 0);
+  /* justify-content: space-between; */
+}
+
+.left img {
+  margin: 25px 0;
+  border: 2px #000 solid;
+  width: 200px;
+  transition: all 0.5s ease-out;
+}
+
+.left img:hover {
+  border: 4px red solid;
+  border-radius: 50%;
+  width: 250px;
+  margin: 50px 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.right {
+  flex: 3;
+}
+/* .left {
+  height: 70vh;
+  float: left;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+} */
+
+/* .right {
+  float: left;
+  width: 60%;
+} */
+
+table {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-spacing: 0;
+  font-family: "Arial", sans-serif;
+
+  /* color: #2b7924; */
+  border-spacing: 2px;
+  /* border: 1px solid rgb(0, 88, 5); */
+  /* -webkit-border-radius: 25px 25px 0 0; */
+  border-radius: 4px;
+  /* 2px 2px 2px; */
+}
+
+table tr th {
+  text-transform: capitalize;
+  padding: 0.8rem;
+  text-align: center;
+  color: #fff;
+  background: rgb(66, 117, 0);
+  border-bottom: 2px rgb(0, 199, 27) solid;
+  border-radius: 8px 8px 0px 0px;
+}
+
+table tr {
+  background: rgb(96, 170, 0);
+}
+
+table tr td {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+}
+
+table tr td:first-child {
+  text-align: left;
+}
+
+table tr td:hover {
+  /* background: rgb(251, 255, 1); */
+  color: rgba(0, 0, 0, 1);
+}
+
+/* .table tbody tr td{
+  color:#999;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+} */
+
+/* .table tbody tr td:first-child{
+  text-align: left;
+} */
+
+/* .table tbody tr:nth-child(odd){
+  background:#222;
+} */
+
+table tr th:first-child {
+  text-align: left;
+}
