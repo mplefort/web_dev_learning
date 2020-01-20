@@ -1,0 +1,46 @@
+Twitter Bootstrap
+
+What is it?
+    -Front end frame work
+        used in client not in server
+    - includes HTML/ CSS / JS
+    - Mobile first focused. Design for mobile phone first then build up to larger screens
+
+Why Use it?
+    - Increase Development speed
+    - helper classes for alignment, style, buttons already done
+    - Responsiveness
+    - Consistency 
+    - Customizable - can add own design for any theme
+    - Support - large community, good documents
+
+What will be covered
+    - What is it
+    - Installation and setup
+    - HTML / CSS components
+    - Grid System - makes layouts wihtout floats
+    - Create bootstrap cheatsheet
+        - alerats 
+
+What included
+    - Navbars and dropdowns
+    - Jumbotron/showcase area
+    - Alerts / progress bars
+    - Form and Input
+    - BUttons and Links
+    - L  abels and badges
+    - Icons
+    - List groups
+    - wells nad panels
+    - pagination
+    - thumbnails
+    - tables
+    - Grid system
+    - Responsive utils
+
+Intallations
+    - manually download source (CSS/JS)
+    - CDN - content delivery network, script and link to css hosted somewhere else. Can't work with it offline
+    - Bower - package manager (client side install).
+    - NPM - backend side and Node.js on server side.
+    - need to include jQuery
