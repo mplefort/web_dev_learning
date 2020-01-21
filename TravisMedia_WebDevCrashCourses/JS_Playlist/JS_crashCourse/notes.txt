@@ -1,0 +1,13 @@
+JS crashcourse:
+    1. What is JS  
+        - High level interpreted language, scripting language
+        - ECAScript specifications
+        - Language of frontend
+    2. Why learn JS
+        - Browser language, opposed to python, java, php server languages
+        - slide shows, browser widgets
+        - Interactive interfaces with React, angular, Vue JS.
+        - mobile dev (React Native, NativeScript, Ionic)
+        - Desktop application (Electron JS)
+    3. Topics covered 
+        -Vars, arrays, obj. literals, methods, Loops, Conditions, OOP, DOM manipulation.

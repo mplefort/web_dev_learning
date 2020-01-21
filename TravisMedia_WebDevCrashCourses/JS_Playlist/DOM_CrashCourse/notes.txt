@@ -1,0 +1,6 @@
+DOM - Doc. Object Model
+
+A tree structure
+    - Tree of nodes/elements created by browser
+    - JS can read/write/manipulate DOM
+    - OOP represented
