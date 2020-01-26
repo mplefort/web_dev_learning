@@ -217,61 +217,61 @@ console.dir(document);
 //   //     "<h3>" + e.target.value + "</h3>";
 // }
 
-// // DOM crash course part 4 -- Build a small project // //
+// DOM crash course part 4 -- Build a small project // //
 
-// let form = document.getElementById("addForm");
-// let itemList = document.getElementById("items");
-// let filter = document.getElementById("filter");
+let form = document.getElementById('addForm');
+let itemList = document.getElementById('items');
+let filter = document.getElementById('filter');
 
-// // form submit event
-// form.addEventListener("submit", addItem);
-// // delete event
-// itemList.addEventListener("click", delItem);
-// // Filer items
-// filter.addEventListener("keyup", filterItems);
+// form submit event
+form.addEventListener('submit', addItem);
+// delete event
+itemList.addEventListener('click', delItem);
+// Filer items
+filter.addEventListener('keyup', filterItems);
 
-// function addItem(e) {
-//   e.preventDefault();
-//   //   get text input value
-//   let newItem = document.getElementById("item");
-//   //   Create new li element to add text to
-//   let li = document.createElement("li");
-//   li.className = "list-group-item";
-//   //   append text node with input value
-//   li.appendChild(document.createTextNode(newItem.value));
+function addItem(e) {
+  e.preventDefault();
+  //   get text input value
+  let newItem = document.getElementById('item');
+  //   Create new li element to add text to
+  let li = document.createElement('li');
+  li.className = 'list-group-item';
+  //   append text node with input value
+  li.appendChild(document.createTextNode(newItem.value));
 
-//   //   create delete button
-//   let delbtn = document.createElement("button");
-//   delbtn.className = "btn btn-danger btn-sm float-right delete";
-//   delbtn.appendChild(document.createTextNode("X"));
-//   li.appendChild(delbtn);
-//   itemList.appendChild(li);
-// }
+  //   create delete button
+  let delbtn = document.createElement('button');
+  delbtn.className = 'btn btn-danger btn-sm float-right delete';
+  delbtn.appendChild(document.createTextNode('X'));
+  li.appendChild(delbtn);
+  itemList.appendChild(li);
+}
 
-// function delItem(e) {
-//   console.log(e);
-//   if (e.target.classList.contains("delete")) {
-//     if (confirm("Are you sure?")) {
-//       let li = e.target.parentElement;
-//       itemList.removeChild(li);
-//     }
-//   }
-// }
+function delItem(e) {
+  console.log(e);
+  if (e.target.classList.contains('delete')) {
+    if (confirm('Are you sure?')) {
+      let li = e.target.parentElement;
+      itemList.removeChild(li);
+    }
+  }
+}
 
-// function filterItems(e) {
-//   // convert to lowercase
-//   let text = e.target.value.toLowerCase();
+function filterItems(e) {
+  // convert to lowercase
+  let text = e.target.value.toLowerCase();
 
-//   //   get all li in list
-//   let items = itemList.getElementsByTagName("li");
+  //   get all li in list
+  let items = itemList.getElementsByTagName('li');
 
-//   Array.from(items).forEach(function(item) {
-//     let itemName = item.firstChild.textContent;
-//     itemName = itemName.toLowerCase();
-//     if (itemName.indexOf(text) != -1) {
-//       item.style.display = "block";
-//     } else {
-//       item.style.display = "none";
-//     }
-//   });
-// }
+  Array.from(items).forEach(function(item) {
+    let itemName = item.firstChild.textContent;
+    itemName = itemName.toLowerCase();
+    if (itemName.indexOf(text) != -1) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
