@@ -1,5 +1,4 @@
 // call geocode
-// API_KEY = AIzaSyDUZoXwGC8odW4crKzjNw5c6cLEuF_VpUY
 async function geocode(e) {
   // prevent actual submit
   e.preventDefault();
@@ -8,15 +7,12 @@ async function geocode(e) {
   let location = document.getElementById('location-input').value;
   console.log(location);
   let base_req = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-  let api_key = '&key=AIzaSyDUZoXwGC8odW4crKzjNw5c6cLEuF_VpUY';
   let req = '';
   req = base_req + location + api_key;
   console.log(req);
   // ?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=
 
-  // const resp = await fetch(
-  //   'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDUZoXwGC8odW4crKzjNw5c6cLEuF_VpUY'
-  // );
+
   const resp = await fetch(req);
   // console.log(resp);
 
