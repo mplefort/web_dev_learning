@@ -12,3 +12,15 @@ TravisMedia_WebDevCrashCourses/HTML_CSS_Playlist/bootstrap4ThemeProject/node_mod
 vsCodeVenv/
 
 TravisMedia_WebDevCrashCourses/JS_Playlist/GoogleMapsAPI/index.html
+
+TravisMedia_WebDevCrashCourses/JS_Playlist/PetFinder/node_modules/
+
+TravisMedia_WebDevCrashCourses/JS_Playlist/PetFinder/js/keys.js
+
+TravisMedia_WebDevCrashCourses/JS_Playlist/PetFinder/dist/
+
+TravisMedia_WebDevCrashCourses/JS_Playlist/PetFinder/.cache/
+
+TravisMedia_WebDevCrashCourses/JS_Playlist/PetFinder/package-lock.json
+
+TravisMedia_WebDevCrashCourses/JS_Playlist/PetFinder/package.json
