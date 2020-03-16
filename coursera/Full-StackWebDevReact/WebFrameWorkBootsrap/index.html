@@ -10,9 +10,25 @@
 </head>
 
 <body>
-
-    <header class="jumbotron">
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="#" class="navbar-brand">Ristorante Con Fusion</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <!-- mr-auto = margin-right as large as possible -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="aboutus.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="jumbotron">
+        <div class="container-fluid">
             <div class="row row-header">
                 <div class="col-12 col-sm-6">
                     <h1>Ristorante con Fusion</h1>
@@ -25,7 +41,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3 order-sm-last">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -65,13 +81,13 @@
     </div>
 
     <footer class="footer">
-        <div class="container">
+        <div class="-fluid-fluid">
             <div class="row">
                 <div class="col-4 col-sm-2 offset-1">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="aboutus.html">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
