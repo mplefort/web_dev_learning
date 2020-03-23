@@ -1,6 +1,6 @@
-// $(document).ready(function () {
-//     $('[data-toggle="tooltip"]').tooltip();
-// })
+import jQuery from 'jquery';
+window.$ = window.jQuery = jQuery; // workaround for https://github.com/parcel-bundler/parcel/issues/333
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 $(document).ready(function() {
 	// 2 second per slide

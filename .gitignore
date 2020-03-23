@@ -28,3 +28,7 @@ TravisMedia_WebDevCrashCourses/JS_Playlist/PetFinder/package.json
 node_modules/
 
 coursera/Full-StackWebDevReact/WebFrameWorkBootsrap/capstone/snow_tour-web_ex/
+
+.cache/
+
+dist/
