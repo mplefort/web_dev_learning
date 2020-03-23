@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="../../../main/css/WebFrameWorkBootsrap.min.css">
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -32,7 +32,7 @@
                     </li>
                 </ul>
                 <span class="navbr-text">
-                    <a href="#" data-toggle="modal" data-target="#loginModal">
+                    <a href="#" id="login-modal">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -54,8 +54,7 @@
                 </div>
                 <div class="d-flex col-sm-4 align-self-center justify-content-center">
                     <!-- reservation modal example -->
-                    <a href="#" class="btn btn-sm btn-warning my-5 btn-block" data-toggle="modal"
-                        data-target="#reservationModal">Reserve a Table</a>
+                    <a href="#" id="reserve-modal" class="btn btn-sm btn-warning my-5 btn-block">Reserve a Table</a>
                     <!-- tooltip example -->
                     <!-- <a href="#reservetable" class="btn btn-sm btn-warning my-5 btn-block" data-toggle="tooltip"
                         data-html="true" title="Or Call us at <br><strong> +852 12345678</strong>"
@@ -196,8 +195,8 @@
         aria-hidden="true">
         <div class="modal-dialog" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h5 class="modal-title text-dark" id="reservationModalLabel">Reserve a Table
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reservationModalLabel">Reserve a Table
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="" aria-hidden="true">&times;</span>
@@ -369,28 +368,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        // $(document).ready(function () {
-        //     $('[data-toggle="tooltip"]').tooltip();
-        // })
-
-        $(document).ready(function () {
-            // 2 second per slide
-            $('#mycarousel').carousel({ interval: 2000 });
-            $('#carouselButton').click(function () {
-                if ($('#carouselButton').children('span').hasClass('fa-pause')) {
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                    $('#mycarousel').carousel('pause');
-                } else {
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                    $('#mycarousel').carousel('cycle');
-                }
-
-            });
-        });
-    </script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
