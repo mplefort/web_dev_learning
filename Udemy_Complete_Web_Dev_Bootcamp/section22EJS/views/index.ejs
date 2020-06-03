@@ -1,0 +1,27 @@
+<%- include("header") -%>
+
+<body>
+  <div class="box" id="heading">
+    <h1>A templated EJS To-Do list project <br><%=ListTitle%></h1>
+  </div>
+
+  <div class="box">
+
+    <form action="/newItem" method="post">
+      <input type="text" name="newItem" placeholder="Add item">
+      <button name="list" type="submit" value="<%= ListTitle %>">+</button>
+    </form>
+  </div>
+  <div class="box">
+    <ul>
+      <% newItem.forEach(function(item) { %>
+      <div class="item">
+        <input type="checkbox">
+        <p><%= item  %> </p>
+      </div>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+
+<%- include("footer") -%>

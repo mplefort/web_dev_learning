@@ -32,3 +32,10 @@ coursera/Full-StackWebDevReact/WebFrameWorkBootsrap/capstone/snow_tour-web_ex/
 .cache/
 
 dist/
+
+codeCampProjects/APIsBeginners/js
+
+
+*.env
+
+section20_MailChimpExample/

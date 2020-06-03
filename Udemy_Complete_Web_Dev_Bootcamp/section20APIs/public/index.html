@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherApp</title>
+</head>
+
+<body>
+
+  <form action="/get-weather" method="post">
+    <label for="city-input">Input a city</label>
+    <input type="text" name="city" id="city">
+    <label for="units">Select Unit</label>
+    <label for="unitsF">F</label>
+    <input type="radio" id="unitsF" name="units" value="imperial">
+    <label for="unitsC">C</label>
+
+    <input type="radio" id="unitsC" name="units" value="metric">
+
+    <button type="submit">Go</button>
+
+  </form>
+
+
+</body>
+
+</html>

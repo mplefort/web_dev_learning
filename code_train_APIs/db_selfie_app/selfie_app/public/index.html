@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Data Selfie App</h1>
+  <p>Hello</p>
+
+  <div><a href="/">enter</a> | <a href="/logs">list</a></div>
+  <p>
+    latitude: <span id="latitude"></span>&deg;<br />
+    longitude: <span id="longitude"></span>&deg;
+  </p>
+  <label for="mood">enter your mood</label>
+  <input id="mood" value="rainbow" />
+  <button id="submit">submit</button>
+  <!-- <script src="sketch.js"></script> -->
+
+  <script>
+    if ('geolocation' in navigator) {
+      console.log("geolocation is available");
+      navigator.geolocation.getCurrentPosition(async position => {
+        console.log(position.coords);
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        document.getElementById('latitude').innerText = lat;
+        document.getElementById('longitude').innerText = lon;
+
+        const data = { lat, lon }
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+        const response = await fetch('/api', options);
+        const json = await response.json();
+        console.log(json);
+      })
+    } else {
+      console.log("geolocation is not available");
+    }
+  </script>
+</body>
+
+</html>
