@@ -4,8 +4,8 @@ import sys
 
 print(sys.executable)
 
-client = Client(username="AC91634388320341f0028027d6041c2ba3",
-                password="ef17ed77758b796a173ab212697e9c83")
+client = Client(username="SID",
+                password="KEY")
 
 
 for msg in client.messages.list():
