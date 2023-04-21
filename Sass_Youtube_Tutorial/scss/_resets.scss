@@ -1,0 +1,10 @@
+// This is a "partial" the _{name}.scss file makes it so it won't 
+// compile. It will be included into other main file with
+// import.
+
+// resets
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

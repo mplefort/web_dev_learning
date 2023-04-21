@@ -1,0 +1,16 @@
+body {
+    background-color:#2d2d2d;
+    font-family: arial,sans-serif;
+}
+
+div, #nav, a{
+    color: white;
+    text-decoration: none;
+    text-align: right;
+    font: 13px/27px Roboto,Arial,sans-serif;
+    height: 48px;
+}
+
+#nav-link, a{
+    padding: 0px 0px 0px 15px;
+}

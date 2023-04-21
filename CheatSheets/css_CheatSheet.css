@@ -1,0 +1,196 @@
+
+
+/* backgrounds */
+body{
+    background: #ffffff url("img_tree.png") no-repeat right top;
+    background: {color} {image} {repeat} {attachment} {position}
+  }
+
+/* margin/padding/border */
+p{
+    margin: 25px 50px 75px 100px;
+    margin: {margin-top} {margin-right} {margin-bottom} {margin-left}
+    border: 5px solid red;
+    border: {border-width} {border-style} {border-color}
+    padding: {padding-top} {padding-right} {padding-bottom} {padding-left}
+}
+
+/* Centering */
+div {
+    /* You can set the margin property to auto to horizontally center.
+     the element within its container.
+ */
+    width: 300px;
+    margin: auto;
+    border: 1px solid red;
+  }
+
+  /* Width */
+  /* - Width - width of element's conent area. Portin inside the padding,
+         border, and margin (box model)
+  - Padding is added to the element's specified width
+  - Use box-sizing to force box model size to follow width. 
+    Without this, this example width would be 350px. */
+
+  div {
+    width: 300px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+/* fonts */
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-family: Arial, Verdana, Tahoma, "Trebuchet MS", "Times New Roman",
+     Georgia, Garamond, "Courier New", "Brush Script MT";
+
+    /* sizes */
+    font-size: 40px;
+    /* 1em=current font size */
+    font-size: 2.5em; /* 40px/16 = 2.5em */;
+    /* 1vw = 1% viewport width - text follows size of browser window width*/
+    font-size:10vw;
+
+    /* font shorthand */
+    font: italic small-caps bold 12px/30px Georgia, serif;
+    font: {font-style} {font-variant} {font-weight} {font-size} {font-family}
+
+}
+
+/* links */
+/* state - unvisted  */
+a:link {
+    /* remove underline */
+    text-decoration: none;
+}
+
+/* state - visted */
+a:visited {}
+
+/* state - on hover over with mouse */
+a:hover {}
+
+/* state - selected link */
+a:active {}
+
+
+/* lists */
+ul.a {
+    list-style-position: outside;
+    list-style-image: url('sqpurple.gif');
+    list-style-type: circle;
+    
+    /* remove default settings */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    /* shorthand */
+    list-style: {list-style-type} {list-style-position} {list-style-image}
+
+}
+
+/* Tables */
+table {
+    /* make borders look thin single line */
+    border-collapse: collapse;
+    /* width of table span entire element */
+    width: 100%;
+    /* text align */
+    text-align: center;
+    vertical-align: bottom;
+
+    /* style with state change */
+    /* &:hover */
+
+    /* add scroll bar on horizontal if off page */
+    overflow-x: auto;
+
+}
+
+/* Hiding elements */
+body {
+    /* remove item and its spacing */
+    display: none;
+    /* remove item, but its spacing remains */
+    visibility:hidden;
+}
+
+/* Make element responsive and centered */
+div.ex2 {
+    /* set max width of element to 500 or less px */
+    max-width: 500px;
+    margin: auto;
+    border: 3px solid #73AD21;
+  }
+
+
+/* positioning */
+body{
+
+    /* set what layer level to be if overlapping.  */
+    z-index: -1;
+
+    /* set what happens if text/content overflows from content box */
+    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /* position - set how an element position is, static, relative, fixed, absolute, sticky*/
+    position:absolute;
+
+    /* Float lets element float beside another container, wrap text around an image.
+    Sorta makes a block element inline. use "clear" in next element to cancel it's effects*/
+    float: left;
+    clear: left;
+
+}
+
+  /* an image example of float  */
+img-container {
+    float: left;
+    width: 33.33%; /* three containers (use 25% for four, and 50% for two, etc) */
+    padding: 5px; /* if you want space between the images */
+}
+
+/* display: inline-block
+inline = no new line, no padding, no margin
+block = new line, and padding margin
+inline-block = no new line, keeps padding/margin */
+div {
+  display: inline-block
+}
+
+/* SELECTORS */
+div p {
+  /* this is a descendant - all sub elements in parent */
+}
+
+div > p {
+  /* this is a child selector - next layer down from parent. p's inside of another div 
+  inside this div will not be selected*/
+}
+
+div + p {
+  /* this is a adjacent sibling selector - select p after the div, not inside the div. 
+  Just the next one */
+}
+
+div ~ p {
+  /* this is general sibling selector select p after the div and all the follwoing p's
+  at the same DOM level*/
+}
+
+
+/* Attribute selectors */
+a[target] {
+  /* select links with a target attribute */
+  /* a[target="_blank"] - select links with attribute and value
+     [title~="flower"] contains word flower
+     [attribute|="value"] contains "value" or "value-somethingelse"
+     [attribute^="value"] starts with "value"
+     [attribute$="value"] ends with "value"
+     [attribute*="value"] contains "value" anywhere in  */
+}
+
+

@@ -1,0 +1,69 @@
+// partials imports
+@import './resets'; 
+@import './variables'; 
+
+
+// functions - use to compute values for repeated us
+@function weight($weight-name){
+    @return map-get($map: $font-weights, $key: $weight-name)
+};
+
+// mixins - used to define styles for repeated use
+@mixin flexCenter($direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background: lighten($color: $primary-color, $amount: 100%);
+        color: darken($color: $text-color, $amount: 100%);
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile){
+        @content
+    }
+}
+
+body {
+    background-color: $primary-color;
+    color: $text-color;
+}
+
+// nesting - resuable classes better practice then over nesting
+.main{
+    @include flexCenter(row);
+    width: 80%;
+    margin: 0px auto;
+
+    // nestingn - & replaces to parent, #{} - interpolation to keep nesting proper in css
+    #{&}__paragraph1{
+        font-weight: weight(bold);
+        padding: 0px 10px;
+
+        &:hover{
+            color: pink;
+        }
+    }
+
+    #{&}__paragraph2{
+        // extend - inherit all properties from extention class
+        @extend .main__paragraph1;
+        &:hover{
+            color: $accent-color;
+        }
+
+    }
+
+    @include mobile{
+        flex-direction: column;
+    }
+}
+
+.light{
+    @include theme($light-theme: true)
+}
