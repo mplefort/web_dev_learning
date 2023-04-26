@@ -249,10 +249,11 @@ DELETE FROM restaurants WHERE id = {id value}
 - app.patch
 - app.put
 
-- postman
-  - Test APIs and server when front end is not done. The post, create, update, delete crud commands will not run using web page url.
-  - Can construct any HTTP method you want (post, put, patch, etc.)
-  - an add headers, authorization,
+#### Postman
+
+- Test APIs and server when front end is not done. The post, create, update, delete crud commands will not run using web page url.
+- Can construct any HTTP method you want (post, put, patch, etc.)
+- an add headers, authorization,
 
 ## Restaurant Routes - Restful API Convetions
 
@@ -439,10 +440,10 @@ Stores results from backend in Context API. Benefits:
 
 Context provider component - propso all components have access to state
 
-### Fetching Data from Backend
+### Fetching Data from Backend - store them in
 
 1. Terminal setup
-   - server dir install axios for api calls to backend. Prefered for better formatting
+   - client dir install axios for api calls to backend. Prefered for better formatting
    - other option is fetch api
 2. Directory in src/api/restaurantfinder.js
    - `import axios from "axios"`
@@ -463,3 +464,60 @@ Context provider component - propso all components have access to state
    - `{restaurants, setRestaurants} useContext(RestaurantsContext)`
      - store the api call response and put into the "context"
      - store the hooks of that component, `RestaurantList`
+
+### Render Restaurant List Table from PreSQL database
+
+`client\src\components\RestaurantList.jsx`
+
+```
+javascript
+<tbody>
+  {restaurants &&
+    restaurants.map((restaurant) => {
+      return (
+        <tr key={restaurant.id}>
+          <td>{restaurant.name}</td>
+          <td>{restaurant.location}</td>
+          <td>{"$".repeat(restaurant.price_range)}</td>
+          <td>reviews</td>
+          <td>
+            <button className="btn btn-warning">Edit</button>
+          </td>
+          <td>
+            <button className="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      );
+  })}
+</tbody>
+```
+
+### Adding Resturants Via API to Database
+
+in AddRestaurnat.jsx, Need to make inputs `controlled` inputs. Use `useState("")`.
+
+- Need one for each input: name, location, price_range
+- make controled by making input have classes of:
+  - `<input value={name} onChange={(e) => setLocation(e.target.value)}`
+
+Submit buttton will handle the api call
+
+- `handleSubmit()`
+  - make `post` call to api with name, locaiton, and price_range
+
+Update UI
+
+- RestaurantContext.js
+  - addRestaurants
+  - submit button `onClick={handleSubmit}`
+  - `handleSubmit()`
+    - submit a _post_ api request to to "../apis/RestaurantFinder" axios api callers
+    - Update UI using `addRestaurants()` defined in "../context/RestaurantsContext"
+
+### Delete Restaurant via API call to Database
+
+- Add onClick event handler to Delete button in RestaurantList.jsx
+- `handleDelete(restarant.id)` via arrow function so it runs only on click rather then right away. You are passing a ref to function
+- `handleDelete(restaurant.id)`
+  - Call api `RestaurantFinder.delete("/${id}")`
+  - use a async/await and store response

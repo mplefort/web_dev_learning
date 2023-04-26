@@ -2,6 +2,7 @@
 require("dotenv").config();
 const express = require("express");
 const db = require("./db/index");
+const cors = require("cors");
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -12,6 +13,8 @@ const port = process.env.PORT || 3001;
 //     console.log("This is called first");
 //     next();
 // });
+
+app.use(cors());
 
 // Middleware - adds req.body to the req object for Post
 app.use(express.json());
