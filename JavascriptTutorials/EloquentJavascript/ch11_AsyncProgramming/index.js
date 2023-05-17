@@ -1,153 +1,101 @@
-// Callback function to call after 500ms timeout reached
-setTimeout(() => console.log("Tick"), 500);
+var fs = require("fs");
 
-// Called first since the code moves on, unblocking
-console.log("Tock");
+var data = {
+  name: "cliff",
+  age: "34",
+  name: "ted",
+  age: "42",
+  name: "bob",
+  age: "12",
+};
 
-const { bigOak } = require("./crow-tech");
-const { defineRequestType } = require("./crow-tech");
+var jsonData = JSON.stringify(data);
 
-bigOak.readStorage("food caches", (caches) => {
-  let firstCache = caches[0];
-  bigOak.readStorage(firstCache, (info) => {
-    console.log(info);
-  });
+fs.writeFile("test.txt", jsonData, function (err) {
+  if (err) {
+    console.log(err);
+  }
 });
+// // function myfunc(callback) {
+// //   console.log("Starting");
 
-bigOak.send("Cow Pasture", "Note", "Lets caw loudly at 7PM", () =>
-  console.log("Note received")
-);
+// //   callback();
 
-defineRequestType("note", (nest, content, source, done) => {
-  console.log(`${nest.name} received note: ${content}`);
-  done();
-});
+// //   return "Finised function";
+// // }
 
-function storage(nest, name) {
-  return new Promise((resolve) => {
-    nest.readStorage(name, (result) => resolve(result));
-  });
-}
+// // let func_return = myfunc(() =>
+// //   setTimeout(() => console.log("timer done"), 2000)
+// // );
 
-storage(bigOak, "enemies").then((value) => console.log("Got", value));
+// // console.log(func_return);
 
+// // try {
+// //   setTimeout(() => {
+// //     throw new Error("Woosh");
+// //   }, 20);
+// // } catch (_) {
+// //   // This will not run
+// //   console.log("Caught!");
+// // }
 
-// class Timeout extends Error {}
+// let start = Date.now();
+// setTimeout(() => {
+//   console.log("Timeout ran at", Date.now() - start);
+// }, 20);
+// while (Date.now() < start + 2000) {}
+// console.log("Wasted time until", Date.now() - start);
+// // → Wasted time until 50
+// // → Timeout ran at 55
 
-// function request(nest, target, type, content) {
-//   return new Promise((resolve, reject) => {
-//     let done = false;
-//     function attempt(n) {
-//       nest.send(target, type, content, (failed, value) => {
-//         done = true;
-//         if (failed) reject(failed);
-//         else resolve(value);
-//       });
-//       setTimeout(() => {
-//         if (done) return;
-//         else if (n < 3) attempt(n + 1);
-//         else reject(new Timeout("Timed out"));
-//       }, 250);
+// tracker = [
+//   employee_id : #,
+//   order_number: str,
+//   {
+//     part: str,
+//     duration: Date,
+//     [{
+//       start: Date,
+//       stop: Date,
+//     }]
+//   }
+// ]
+
+// status: "Start", "Stop", "Pause", "Resume", "Continue", "Complete"
+
+// for line in data{
+//   if !tracker.includes(line.order_number)
+//   {
+//     tracker.append[
+//       employee_id : line.employee_id,
+//       order_number: line.order_number,
+//     ]
+//   }
+
+//   if !tracker.order_number.includes(line.part)
+//     tracker.order_number.append{
+//       {
+//         part: str,
+//         duration: Null
+//       }
 //     }
-//     attempt(1);
-//   });
-// }
 
-// function requestType(name, handler) {
-//   defineRequestType(name, (nest, content, source, callback) => {
-//     try {
-//       Promise.resolve(handler(nest, content, source))
-//         .then(response => callback(null, response),
-//               failure => callback(failure));
-//     } catch (exception) {
-//       callback(exception);
+//     if line.status == "Start" || "Resume" || "Continue" {
+//       tracker.order_number.part.append{
+//         start: line.status.Time
 //     }
-//   });
-// }
+//     else{
+//       tracker.order_number.part.append{
+//         stop: line.status.Time
+//     }
+//     }
 
-// requestType("ping", () => "pong");
-
-// function availableNeighbors(nest) {
-//   let requests = nest.neighbors.map(neighbor => {
-//     return request(nest, neighbor, "ping")
-//       .then(() => true, () => false);
-//   });
-//   return Promise.all(requests).then(result => {
-//     return nest.neighbors.filter((_, i) => result[i]);
-//   });
-// }
-
-// const {everywhere} = require("./crow-tech")
-
-// everywhere(nest => {
-//   nest.state.gossip = [];
-// });
-
-// function sendGossip(nest, message, exceptFor = null) {
-//   nest.state.gossip.push(message);
-//   for (let neighbor of nest.neighbors) {
-//     if (neighbor == exceptFor) continue;
-//     request(nest, neighbor, "gossip", message);
 //   }
 // }
 
-// requestType("gossip", (nest, message, source) => {
-//   if (nest.state.gossip.includes(message)) return;
-//   console.log(`${nest.name} received gossip '${
-//                message}' from ${source}`);
-//   sendGossip(nest, message, source);
-// });
-
-// sendGossip(bigOak, "Kids with airgun in the park");
-
-// // // Promises // //
-
-// const myPromise = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     // Simulating an asynchronous operation
-//     const randomNumber = Math.random();
-
-//     if (randomNumber < 0.5) {
-//       resolve(randomNumber); // Fulfill the promise with a value
-//     } else {
-//       reject(new Error("Something went wrong")); // Reject the promise with an error
-//     }
-//   }, 2000);
-// });
-
-// myPromise.then(
-//   (value) => {
-//     console.log("Promise fulfilled with value:", value);
-//   },
-//   (reason) => {
-//     console.log("Promise rejected with reason:", reason);
-//   }
-// );
-
-// myPromise
-//   .then((value) => {
-//     console.log("Promise fulfilled with value:", value);
-//     // Create a new promise here
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         const anotherRandomNumber = Math.random();
-//         resolve(anotherRandomNumber);
-//       }, 1000);
-//     }); // Return a new value for the next `then()` in the chain
-//   })
-//   .then((newValue) => {
-//     console.log("New value:", newValue);
-//   })
-//   .catch((error) => {
-//     console.log("An error occurred:", error);
-//   });
-
-// new Promise((_, reject) => reject(new Error("Fail")))
-//   .then((value) => console.log("Handler 1"))
-//   .catch((reason) => {
-//     console.log("Caught failure " + reason);
-//     return "whatever I want";
-//   })
-//   .then((value) => console.log("Handler 2", value));
-// // → Caught failure Error: Fail
-// // → Handler 2 nothing
+// for camper in Tracker:
+//   for part in camper:
+//     duration = null
+//     for instance in part:
+//       duration = stop - start
+//     part.duration = duration
