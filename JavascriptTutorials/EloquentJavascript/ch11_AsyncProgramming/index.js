@@ -48,54 +48,54 @@ fs.writeFile("test.txt", jsonData, function (err) {
 // // → Wasted time until 50
 // // → Timeout ran at 55
 
-// tracker = [
-//   employee_id : #,
-//   order_number: str,
-//   {
-//     part: str,
-//     duration: Date,
-//     [{
-//       start: Date,
-//       stop: Date,
-//     }]
-//   }
-// ]
+tracker = [
+  employee_id : #,
+  order_number: str,
+  {
+    part: str,
+    duration: Date,
+    [{
+      start: Date,
+      stop: Date,
+    }]
+  }
+]
 
-// status: "Start", "Stop", "Pause", "Resume", "Continue", "Complete"
+status: "Start", "Stop", "Pause", "Resume", "Continue", "Complete"
 
-// for line in data{
-//   if !tracker.includes(line.order_number)
-//   {
-//     tracker.append[
-//       employee_id : line.employee_id,
-//       order_number: line.order_number,
-//     ]
-//   }
+for line in data{
+  if !tracker.includes(line.order_number)
+  {
+    tracker.append[
+      employee_id : line.employee_id,
+      order_number: line.order_number,
+    ]
+  }
 
-//   if !tracker.order_number.includes(line.part)
-//     tracker.order_number.append{
-//       {
-//         part: str,
-//         duration: Null
-//       }
-//     }
+  if !tracker.order_number.includes(line.part)
+    tracker.order_number.append{
+      {
+        part: str,
+        duration: Null
+      }
+    }
 
-//     if line.status == "Start" || "Resume" || "Continue" {
-//       tracker.order_number.part.append{
-//         start: line.status.Time
-//     }
-//     else{
-//       tracker.order_number.part.append{
-//         stop: line.status.Time
-//     }
-//     }
+    if line.status == "Start" || "Resume" || "Continue" {
+      tracker.order_number.part.append{
+        start: line.status.Time
+    }
+    else{
+      tracker.order_number.part.append{
+        stop: line.status.Time
+    }
+    }
 
-//   }
-// }
+  }
+}
 
-// for camper in Tracker:
-//   for part in camper:
-//     duration = null
-//     for instance in part:
-//       duration = stop - start
-//     part.duration = duration
+for camper in Tracker:
+  for part in camper:
+    duration = null
+    for instance in part:
+      duration = stop - start
+    part.duration = duration
