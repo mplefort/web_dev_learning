@@ -48,19 +48,28 @@ fs.writeFile("test.txt", jsonData, function (err) {
 // // → Wasted time until 50
 // // → Timeout ran at 55
 
-tracker = [
-  employee_id : #,
-  order_number: str,
+const camper_duration = [
   {
-    part: str,
-    duration: Date,
-    [{
-      start: Date,
-      stop: Date,
-    }]
-  }
-]
-
+    camper_number: "20230502",
+    employeeID: 311044,
+    parts: [
+      {
+        part: "Main Cab",
+        total_duration: null,
+        durations: [
+          {
+            start: new Date("2023-02-02T15:31:25.000Z"),
+            end: new Date("2023-02-02T15:31:45.000Z"),
+          },
+          {
+            start: new Date("2023-02-02T15:31:25.000Z"),
+            end: new Date("2023-02-02T15:31:45.000Z"),
+          },
+        ],
+      },
+    ],
+  },
+];
 status: "Start", "Stop", "Pause", "Resume", "Continue", "Complete"
 
 for line in data{
