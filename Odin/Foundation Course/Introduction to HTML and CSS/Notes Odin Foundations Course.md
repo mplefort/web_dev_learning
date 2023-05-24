@@ -82,17 +82,72 @@ Validator tool to ensure markup is good:
 
 Tags
 
-- `<p> </p>`
-  - Paragraph tags. New line after each p tag. Block element
-- `<hx> </h>`
-  - h1-6 heading tags. Important for outlining. Block Element
-- `<strong>`
-  - The <strong>`<strong>`</strong> makes the text bold. Good for screen readers. Inline element
-- `<Em>`
-  - The em element is <em>italic</em>. Good for screen readers.
+- Paragraph tags. New line after each p tag. Block element
+  - `<p> </p>`
+- h1-6 heading tags. Important for outlining. Block Element
+  - `<hx> </h>`
+- The <strong>`<strong>`</strong> makes the text bold. Good for screen readers. Inline element
+  - `<strong>`
+- The em element is <em>italic</em>. Good for screen readers.
+  - `<Em>`
 
 Nesting
 
 Parent, Child, and sibilign relations exist between nested elements. Useful with JS later on when using selectors.
 
 ### **Lists**
+
+- Unordered List / Ordered list
+
+  ```
+    <ul> / <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul> / </ol>
+  ```
+
+Extra Resources:
+
+- [Shay Howe's HTML Lists Tutorial](https://learn.shayhowe.com/html-css/creating-lists/)
+  - Description Lists
+  - Styling Lists
+  - Horizontal Lists
+
+### **Links and Images**
+
+- Links to pages on other sites
+  - `<a href="https://www.theodinproject.com/about">click me</a>`
+- Links to pages on local site
+  - `<a href="./pages/about.html">About</a>`
+- Diff between absolute and relative links
+  - Links to other sites: `protocal://domain/path`
+  - Relative Links: Links to local site. Only need a relative path, `./path/file.html`
+- Display image on webpage
+
+File Organization structure 9Kevin Powell:
+Use lower case
+Use no spaces, replace with hyphen, camelCase, or underscores.
+
+- path
+  - css
+  - img
+  - js
+  - index.html
+  - about.html
+  - contact.html
+
+4 types of Images on web
+
+- Jpg
+  - Large Color palette
+- GIF
+  - Simple animations
+- PNG
+  - icons, diagrams, logos, etc.
+- SVG
+  - scalable vector based graphic. respone to resizing
+
+Extra Resources:
+[Interneting is hard’s treatment on HTML links and images](https://internetingishard.netlify.app/html-and-css/links-and-images)
+[What happened the day Google decided links including (/) were malware](https://www.itpro.co.uk/609724/google-apologises-after-blacklisting-entire-internet)

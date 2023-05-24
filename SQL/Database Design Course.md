@@ -60,7 +60,7 @@ Design Terms:
 
 All things in data should be 1 thing. i.e. Name => First, Middle, Last Name
 
-## (1:44:25) Relationships<br>
+## (1:44:25) Relationships aka **cardinality** <br>
 ## (1:50:35) One-to-One Relationships<br>
 ## (1:53:45) One-to-Many Relationships<br>
 ## (1:57:50) Many-to-Many Relationships<br>
@@ -93,7 +93,7 @@ user_id | Name     | email          |
 | CardID     | Numbers        | user_id | 
 | ---------- | -------------  | -------
 | 11         | 098545746546   | 43      |
-| 12         | 431864634165   | 44      |
+| 12         | 431864634165   | 43      |
 
 ## (2:23:50) Parent Tables and Child Tables<br>
 
