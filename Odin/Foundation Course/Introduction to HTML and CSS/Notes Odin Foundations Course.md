@@ -149,5 +149,124 @@ Use no spaces, replace with hyphen, camelCase, or underscores.
   - scalable vector based graphic. respone to resizing
 
 Extra Resources:
-[Interneting is hard’s treatment on HTML links and images](https://internetingishard.netlify.app/html-and-css/links-and-images)
-[What happened the day Google decided links including (/) were malware](https://www.itpro.co.uk/609724/google-apologises-after-blacklisting-entire-internet)
+
+- [Interneting is hard’s treatment on HTML links and images](https://internetingishard.netlify.app/html-and-css/links-and-images)
+- [What happened the day Google decided links including (/) were malware](https://www.itpro.co.uk/609724/google-apologises-after-blacklisting-entire-internet)
+
+### **Git Commit Messages**
+
+When to Commit:
+
+- Commit when you have meaningful code change.
+  - i.e. fix a bug, type, work out a function to produce what you want.
+- Should explain why you changed code, examples:
+  - 5ba3db6 Fix failing CompositePropertySourceTests
+  - 84564a0 Rework @PropertySource early parsing logic
+  - e142fd1 Add tests for ImportSelector meta-data
+  - 887815f Update docbook dependency and generate epub
+  - ac8326d Polish mockito usage
+
+7 Tips:
+
+1. Use Code editor for message. Separate subject and body with one line.
+2. Limit subject to 50 chars
+3. Capitalize subject line
+4. Do not end subject line with period
+5. Use the imperative mood in subject line
+   - Use this to make imperative: If applied, this commit will <em>**refactor subsystem X for readability**</em>
+6. Wrap body at 72 chars
+7. Use body to explain what and why vs. how
+
+Set git to use VS code as editor for a commit message: <br>
+`$ git config --global core.editor "code --wait`
+
+See your git messages: <br>
+`$ git log` or just the subject line: `$ git log --oneline`
+
+Set a template git commit message: <br>
+`git config --global commit.template ~/.gitmessage.txt`
+
+### Project: Recipes
+
+See project in [Odin/Foundation Course/Introduction to HTML and CSS/Project_Recipes](./Project_Recipes/)
+
+## CSS Foundations
+
+### [Intro to CSS](https://www.theodinproject.com/lessons/foundations-intro-to-css)
+
+#### Basic Syntax
+
+```css
+/* Syntax */
+selector {
+  property: value;
+}
+
+/* for example */
+div.bold-text {
+  font-weight: 700;
+}
+```
+
+#### The Types of selectors:
+
+- `*` - Select all using `*`
+- `element`- select all same type elements using `name element`
+- `class` - select all with same class using `.`
+- `id` - seelct all with same id using `#`. Note use IDs after classes. Should be rare.
+- `group` - select multiple classes using ",". i.e. `.class1, .class2`
+- `chaining` - select a element by 2 or more classes with ".". i.e. `.class1.class2` or `.class1#id1` you can use for chaining any type of selector except for elements.
+- `descendants` select a nested element within a specific parent with " ". i.e. `.parent-class .child-class #child-child-id`.
+
+#### Properties
+
+Basic:
+
+- color - sets text color
+- background-color - Sets background of element
+- font-family - List of fonts comma separated for browsers to try each one
+- font-size: font size
+- font-weight: sets boldness. use `bold` or `1-1000` value.
+
+Images:
+
+- height: set height in px or relative text sizes rem?
+- width: set width <br>
+  Common to use `auto` for one of the two so ratio of img stays correct. Best to always use these so images loading don't cause website text to "jump" around.
+
+#### Adding CSS to HTML
+
+External CSS added with a link
+
+```html
+<!-- index.html -->
+
+<head>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+```
+
+```css
+/* styles.css */
+
+div {
+  color: white;
+  background-color: black;
+}
+
+p {
+  color: red;
+}
+```
+
+#### Assignment
+
+[CSS Assignment 1-5](https://github.com/TheOdinProject/css-exercises)
+
+### The Cascade
+
+### Inspecting HTML CSS
+
+### The Box Model
+
+### Block and Inline
