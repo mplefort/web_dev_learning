@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Serif0";
+}
+
+h1 {
+  margin: 50px 50px;
+  border-style: solid;
+  text-align: center;
+}
+
+.links {
+  text-align: center;
+}
+
+.links a {
+  font-size: 24px;
+  border-style: solid;
+  padding: 0px 20px;
+  background-color: black;
+  color: white;
+}
+
+div.image {
+  border: 10px solid black;
+  margin: 10px 50px;
+  text-align: center;
+}
+
+div.image img {
+  height: 350px;
+  width: auto;
+}
+
+.ingredients {
+  text-align: left;
+  margin: 50px 100px;
+}
