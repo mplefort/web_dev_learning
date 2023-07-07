@@ -266,6 +266,16 @@ p {
 ### The Cascade
 Children elements/classes receive the same style as parent.
 
+The order of which styles are apply and how they take precedence over each other.
+
+1. ID Selectors (most specific)
+2. CLass Selector
+3. Type Selector
+4. Inheritance - Typography based properties (color, font-size, font-family, etc.) are inherited to child elements. Other properties are not.
+5. Order of definition
+
+Note that two Type selectors beat a single. This applies to each level of specificity above.
+
 ### Inspecting HTML CSS
 Use `CTRL+SHIFT+C`
 
