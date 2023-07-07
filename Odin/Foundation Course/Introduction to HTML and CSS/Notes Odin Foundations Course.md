@@ -264,9 +264,51 @@ p {
 [CSS Assignment 1-5](https://github.com/TheOdinProject/css-exercises)
 
 ### The Cascade
+Children elements/classes receive the same style as parent.
 
 ### Inspecting HTML CSS
+Use `CTRL+SHIFT+C`
 
 ### The Box Model
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model 
+
+Types of display:
+- `display: <block|flex|inline-block|inline-flex>` 
+- Block: elements width default to container size
+- Inline: elements width default to content size
+
+Box Components:
+- Content Box: Area inside box. use `inline-size, block-size, width, height`
+- Padding box: Padding between content and box. `padding`
+- Boarder Box: `boarder`
+- Margin Box: `Margin`
+
+Box models:
+- `box-sizing: border-box` = width and height are of the entire box (content+padding+border) not the content's box.
+
+
+To use border box on all items:
+
+```css
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+```
 
 ### Block and Inline
+
+Types of display:
+- `display: <block|flex|inline-block|inline-flex>` 
+- Block: new line, elements width default to container size
+- Inline: continuous flow like paragraph elements width default to content size
+- Inline-block: continuous flow like paragraph by width/height elements respected by css.
+
+Generic element for dividing content 
+- `<div>` block element 
+- `<span>` inline element
+
