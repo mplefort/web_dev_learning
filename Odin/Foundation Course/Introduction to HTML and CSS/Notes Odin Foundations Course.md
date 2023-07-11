@@ -322,3 +322,30 @@ Generic element for dividing content
 - `<div>` block element 
 - `<span>` inline element
 
+
+### Flexbox + Growing and Shrinking
+
+More commonly used flexbox apposed to messing with inline-block for positioning. 
+
+Topics:
+- Positioning with flexbox
+- flex containers and items
+- create components and layouts 
+
+Definitions:
+- **flex container** - Parent element with **flex items** as children.
+- **flex-grow** - 
+
+Properties:
+- `display: flex`= Creates a flex container. Flex layout horizontal by default
+- `flex: 1` = shorthand for `flex-grow, flex-shrink, flex-basis`
+  - `1` = `flex-grow: 1`, `flex-shrink: 1`, `flex-basis: 0` or `flex: 1 1 0`
+-`flex-grow: int` = growth rate compared to other flex items in the container  
+-`flex-shrink: int` = shrink rate compared to other flex items in the container
+
+Standard uses are:
+- flex: 1 to make divs grow evenly
+- flex-shrink: 0 to keep certain divs from shrinking
+
+### Flex Direction: Axes
+
