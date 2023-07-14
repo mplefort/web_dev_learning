@@ -349,3 +349,14 @@ Standard uses are:
 
 ### Flex Direction: Axes
 
+Properties:
+- `flex-direction: column|row` 
+  - Set in flex container
+  - Note: block elements height default to 0 or their content height, so set their height manually or use the full shortand: `flex: 1 1 auto`; auto to make the height fill its available container space, rather then defualt to 0 (nothing)
+
+### Flex Alignment: 
+
+- Properties:
+  - `justify-content: ` alignment on main axis (horizontal default)
+  - `align-items` alignment on cross axis (vertical default)
+  - `gap` place "margin" on flex-items within a container.
