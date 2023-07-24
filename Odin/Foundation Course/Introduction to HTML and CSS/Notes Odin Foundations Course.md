@@ -360,3 +360,22 @@ Properties:
   - `justify-content: ` alignment on main axis (horizontal default)
   - `align-items` alignment on cross axis (vertical default)
   - `gap` place "margin" on flex-items within a container.
+
+Extra Resources:
+- [Travis Media - Flexbox Crash Course](https://www.youtube.com/watch?v=3YW65K6LcIA)
+
+
+### Flex Project: Landing Page
+Completed: https://mplefort.github.io/OdinLandingPage/
+
+
+
+# Good Resource List:
+
+1. Images
+  - [Pexels](https://www.pexels.com/)
+  - [Pixabay](https://pixabay.com/)
+  - [Unsplash](https://unsplash.com/)
+
+
+  
