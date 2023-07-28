@@ -368,7 +368,30 @@ Extra Resources:
 ### Flex Project: Landing Page
 Completed: https://mplefort.github.io/OdinLandingPage/
 
+## Javascript Basics
 
+### Fundamentals
+
+1. data types
+  - Strings
+  - numbers
+
+2. Conditionals
+  - "<, >, ==, !=, ===, ||, &&, "
+  - === - checks equality without type conversion
+    - null === undefined => false
+    - null == undefined => true
+
+### Functions
+
+1. Default parameters:
+  
+  ```javascript
+   function hello(name = "Defualt")
+   ```
+  
+2. Scope
+  - 
 
 # Good Resource List:
 
@@ -376,6 +399,7 @@ Completed: https://mplefort.github.io/OdinLandingPage/
   - [Pexels](https://www.pexels.com/)
   - [Pixabay](https://pixabay.com/)
   - [Unsplash](https://unsplash.com/)
+
 
 
   
