@@ -391,7 +391,132 @@ Completed: https://mplefort.github.io/OdinLandingPage/
    ```
   
 2. Scope
-  - 
+  - scope to global or within brackets. Can access outside of brackets if previously defined. Inside bracket defined variables are removed once brackets end
+
+
+### Clean Code
+
+1. Naming
+  - Variables = start with Adj/Noun
+  - Functions = start with Verb
+  - Be consistent in naming/referring to items.
+  - Use camelCase(Functions/classes) or the_underscore_names (Variables)
+  - _variable = private
+  - Names = Use good variable names rather then constants or straight numbers
+
+2. Clean Code Tips:
+  - Revise logic before coding. Have a plan/blueprint to what to code
+  - Use HTML div ids for noting structure
+  - Avoid Large functions - break them down for more readability
+  - Name standards for Functions and Variables
+  - Avoid mixing languages i.e. inline css/JS 
+
+  ### Fundamentals - Part 4 Large Data
+
+  Arrays, built in array methods, Loops, and Test-Driven Development (TDD)
+
+  TDD is useful for scoping a function/design prior to writing any code. It forces you to think what you want the function to do prior to stumbling through writing, and painfully testing different inputs to make sure it functions as intended for each item.
+
+  Instead, use TDD. Write out the tests first to clearly define your goal and when it comes time to test it is a simple click. TDD options include:
+  - Mocha
+  - Jest
+
+### DOM Manipulations and Events
+
+Selectors:
+ - `div.display` - element.classs
+ - `.display` - .class
+ - `#container > .display` - #id > child class
+ - `div#container > div.display` - element#id > child element.class
+
+ Methods:
+  - `element.querySelector(selector)` - first match 
+  - `element.querySelectorAll(selectors)` - **NodeList** which is not an array. Convert to array with `Array.from()` or spread operator
+  - `document.createElement(tagName, [options])` - make new element.
+    - Add Elements
+      - `parentNode.appendChild(childNode)`
+      - `parentNode.insertBefore(newNode, referenceNode)`
+    - remove Element
+      - `parentNode.removeChild(child)`
+  - Alter elements
+    - `div.style.color = 'blue'` or `div.setAttribute('style','color: blue; background: white')`
+    - `div.setAttribute()`
+    - `div.getAttribute()`
+    - `div.removeAttribute()`
+    - `div.classList.add()`
+    - `div.classList.remove()`
+    - `div.classList.toggle()`
+  - Add text/HTML
+    - `div.textContent = ` 
+    - `div.innerHTML = `  **Increased Security Risk** use textContent when possible.
+  
+
+  Add js file to your HTML with defer to run at end of rendering page.
+  ``` html
+  <head>
+    <script src="js-file.js" defer></script>
+  </head>
+  ```
+
+
+  Event Listeners Methods:
+
+  
+  1. JS in HTML (not preferred)
+  ``` html
+    <button onclick="alert('Hello World')">Click Me</button> 
+  
+  ```
+
+  2. HTML and JS split. Btn only allowed one click property it watches for.
+  ``` html
+    HTML file
+    <button id="btn">Click Me</button>
+  ```
+  ``` javascript 
+    const btn = document.querySelector('#btn');
+    btn.onclick = () => alert("Hello World");
+  ```
+
+3. Most preferred, separate code and add multiple event listeners
+  ``` html
+  <button id="btn">Click Me Too</button>
+  ```
+  ``` javascript
+  // the JavaScript file
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', alertFunction(e) => {
+      alert("Hello World");
+      console.log(e.target); // access info on event and target node
+    });
+  ```
+
+  Some good event listener's:
+  - click
+  - dblclick
+  - keydown
+  - keyup
+  - [More Events](https://www.w3schools.com/jsref/dom_obj_event.asp)
+
+  
+Capture and Bubbling:
+
+```javascript
+
+  function logText(e) {
+    console.log(this.classList.value);
+    // e.stopPropagation(); // stop bubbling!
+    console.log(this);
+  }
+  
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: true,  // if true fire function on way down, false to fire on way up (bubbling)
+    once: true  // only listen for event once. Remove event listener after first click
+  }));
+  
+  ```
+  
+
 
 # Good Resource List:
 
