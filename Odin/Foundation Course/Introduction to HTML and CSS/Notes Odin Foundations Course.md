@@ -515,6 +515,49 @@ Capture and Bubbling:
   }));
   
   ```
+
+
+  ### Fundamentals - Part 5
+
+  1. Objects
+  ```javascript
+  // string notation
+  obj.property = 'value';
+  obj['property'] = 'value';
+
+  delete obj.property;
+  "key" in obj; // true or false
+  for (let key in obj) {
+    console.log(key, obj[key]);
+  }
+
+  // Object methods
+  Object.keys(obj); // returns array of keys
+  Object.values(obj); // returns array of values
+  Object.entries(obj); // returns array of arrays of key value pairs
+  Object.assign(obj1, obj2); // copies obj2 into obj1
+  Object.assign({}, obj1, obj2); // copies obj1 and obj2 into new object
+  
+  // Object Spread Operator
+  const obj3 = {...obj1, ...obj2}; // copies obj1 and obj2 into new object
+
+  // Object Destructuring
+  const {property1, property2} = obj1; // creates variables property1 and property2 from obj1
+  
+  // array methods
+  arr.filter(item => item !== 1); // returns new array with items that pass test
+  arr.map(item => item * 2); // returns new array with items changed by function
+  arr.sort((a, b) => a - b); // sorts array in place
+  arr.reduce((accumulator, currentValue) => accumulator + currentValue, startingValue); // returns single value from array
+  arr = Array.from(querSelectoryAll('div')); // converts NodeList to array
+
+  arr.some(item => item > 2); // returns true if some items pass test
+  arr.every(item => item > 2); // returns true if all items pass test
+  arr.find(item => item > 2); // returns first item that passes test. Find the comment with ID of 823423
+  arr.findIndex(item => item > 2); // returns index of first item that passes test.
+  arr.splice(index, 1); // removes item at index from array 
+
+  ```
   
 
 
