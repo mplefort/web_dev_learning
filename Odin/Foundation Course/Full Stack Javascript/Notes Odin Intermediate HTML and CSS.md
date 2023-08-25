@@ -243,4 +243,52 @@ Good for:
 
 **Sticky** position act normal until you scroll past them. Then they behave like fixed.
 
-### CSS Funcitons
+### CSS Functions
+
+Common functions:
+
+- `calc()` - perform calculations
+- `var()` - use variables, alled at time of use
+
+  ```css
+  --color-font: red;
+  color: var(--color-font, fallback);
+  ```
+
+  - scope of var set to parent selector or children elements.
+  - use global scope with `:root`
+
+- `min(ideal val, max val to shrink too)` - use minimum value
+  use min to allow element to growing past a max value, but shrink
+- `max(min val, ideal val(s))` - use maximum value
+  use max to allow element to stop shrinking past a min value, but grow
+- `clamp(min, ideal, max)` - use value between min and max
+  - a combination of min and max. Sets a max and min value, but allows the ideal (variable) value to be used if it is between the min and max values.
+
+Function types to be aware of:
+
+- Translational functions - move a element
+- Rotational Functions - rotate an element
+- Scale Functions - scale an element
+- Skew Functions - skew an element
+- Transform Functions - combine multiple functions (Matrix)
+- Math calc, min, max, clamp
+- Trig
+- Rounding
+- exponential
+- Images
+  - opacity
+  - image() - create an image with url
+  - image-set() - pick a image from set
+  - cross-fase
+- Color
+  - rgb, color-mi
+- References
+  - attr() - get value of attribute from HTML
+  - var() - get value of variable
+- Grid Functions
+- Animate
+
+### Browsers
+
+[Can I Use](https://caniuse.com/) - check browser support for features
