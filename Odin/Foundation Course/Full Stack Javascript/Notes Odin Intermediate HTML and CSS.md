@@ -272,3 +272,117 @@ Function types to be aware of:
 ### Browsers
 
 [Can I Use](https://caniuse.com/) - check browser support for features
+
+
+### Forms
+
+`action` - where to send data via api URL
+`method` - how to send data (POST, GET)
+
+Outline of a form:
+```html
+    <form action="example.com/path" method="post">
+        <!-- Label: the label for == input id -->
+        <label for="name">First Name:</label>
+        <!-- Controls,
+             name - tells backend
+             id - for label
+             placeholder - hint to user
+             required - required field
+         -->
+        <input type="text" name="name" id="name" placeholder="Name" required>
+        
+        <!-- other form controls -->
+        <!-- email -->
+        <label for="user_email">Email:</label>
+        <input type="email" name="user_email" id="user_email" placeholder="Email" required>
+
+        <!-- password -->
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+
+        <!-- number input -->
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" placeholder="Age" required>
+
+        <!-- Date -->
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" placeholder="Date" required>
+
+        <!-- text area  -->
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" placeholder="Message" rows="20" cols="60" required></textarea>
+
+        <!-- Dropdown -->
+        <label for="dropdown">Dropdown:</label>
+        <select name="dropdown" id="dropdown">
+            
+            <optgroup label="cars">
+                <option value="1">tesla 1</option>
+                <option value="2" selected>Ford 2</option>
+                <option value="3">BMW 3</option>
+            </optgroup>
+            <optgroup label="trucks">
+                <option value="4">Ford F150 </option>
+                <option value="5">Toyota Tundra</option>
+            </optgroup>
+        </select>
+
+        <!-- radio Button for ticket types  -->
+        <div>
+            <input type="radio" id="child" name="ticket_type" value="child">
+            <label for="child">Child</label>
+        </div>
+        <div>
+            <input type="radio" id="adult" name="ticket_type" value="adult">
+            <label for="adult">Adult</label>
+        </div>
+        <div>
+            <input type="radio" id="senior" name="ticket_type" value="senior">
+            <label for="senior">Senior</label>
+        </div>
+
+        <!-- checkbox -->
+        <div>
+            <input type="checkbox" id="agree" name="agree" value="agree">
+            <label for="agree">I agree to the terms and conditions</label>
+        </div>
+        <div>
+            <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" checked>
+            <label for="subscribe">Subscribe to our newsletter</label>
+        </div>
+
+        <!-- Buttons -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Click to Toggle"</button>
+
+
+        <!-- organize elements with Fieldset, legend -->
+
+        <fieldset>
+            <legend>Legend</legend>
+            <!-- form elements -->
+        </fieldset>
+
+
+    </form>
+```
+
+#### Styling Forms
+
+    ```css
+
+    button,
+    input,
+    select,
+    textarea {
+    font-family: inherit;
+    font-size: 100%;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+    
+    ```
