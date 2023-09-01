@@ -391,6 +391,8 @@ Outline of a form:
 
 #### Styling Forms
 
+  Reset default styles of form elements:
+
     ```css
 
     button,
@@ -406,3 +408,32 @@ Outline of a form:
     }
     
     ```
+
+  See Form-InternetHardForm for example of styling a form.
+
+
+### [Form Validation](https://www.theodinproject.com/lessonsnode-path-intermediate-html-and-css-form-validation)
+
+#### Client Side Validation
+Use `required` to require a field to be filled out on a input element. Standard practice to add a `*` to the label to indicate required.
+
+#### Pattern match
+Use `pattern` to require a specific pattern to be followed. Use regex to define the pattern. i.e. for credit cards, zip code, PWs etc.
+
+#### Text Length
+Use `minlength` and `maxlength` to set the min and max length of a text input.
+
+#### Max and Min
+[MDN Max and Min](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/max#syntax) has complete list of how to use Max and Min. Commonly used in `date, month, week, time, datetime-local, number, range` input types.
+
+#### Styling validations
+Use `:valid` and `:invalid` to style valid and invalid inputs. Use `:required` to style required inputs.
+
+#### Assignment:
+1. [MDN Client side form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+  - Note: There are several errors that will prevent the form from being submitted, including a `badInput, patternMismatch, rangeOverflow or rangeUnderflow, stepMismatch, tooLong or tooShort, typeMismatch, valueMissing`, or a `CustomError`.
+
+2. [sitepoint html forms constraint guide](https://www.sitepoint.com/html-forms-constraint-validation-complete-guide/)
+  - 
+
+
