@@ -1,0 +1,15 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    
+    /* Gap adds to both columns and rows */
+    grid-gap: 10px;
+    /* or */
+    column-gap: 10px;
+    row-gap: 10px;
+
+    /* for overflow content divs greater then grid-template-(rows*columns) */
+    grid-auto-rows: 100px;
+  }
+  

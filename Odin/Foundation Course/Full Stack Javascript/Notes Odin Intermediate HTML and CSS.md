@@ -437,3 +437,50 @@ Use `:valid` and `:invalid` to style valid and invalid inputs. Use `:required` t
   - 
 
 
+### Grid
+
+#### [Intro to Grid](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-introduction-to-grid)
+
+Grid is good for layouts. Flexbox is good for alignment. Both are great.
+
+#### [Creating a Grid](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-creating-a-grid)
+
+Grid is a 2D layout system. This will show how to make a grid container, tracks, diff between implicit and explicit grid, set gaps between cells.
+
+Example simple grid system:
+
+```html
+
+    <div class="grid-container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+      </div>
+
+```
+
+```css
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    
+    /* Gap adds to both columns and rows */
+    grid-gap: 10px;
+    /* or */
+    column-gap: 10px;
+    row-gap: 10px;
+
+    /* for overflow content divs greater then grid-template-(rows*columns) i.e. div 5*/
+    grid-auto-rows: 100px;
+  }
+  
+
+```
+All **direct** child elements will become a grid element. 
+
+[Google Dev tools CSS Grid](https://developer.chrome.com/docs/devtools/css/grid/)
+
