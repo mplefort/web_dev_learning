@@ -439,6 +439,9 @@ Use `:valid` and `:invalid` to style valid and invalid inputs. Use `:required` t
 
 ### Grid
 
+Properties Lists:
+- [CSS-Tricks Grid Properties](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-properties)
+
 #### [Intro to Grid](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-introduction-to-grid)
 
 Grid is good for layouts. Flexbox is good for alignment. Both are great.
@@ -464,8 +467,15 @@ Example simple grid system:
 ```css
 
 .grid-container {
-    display: grid;
+  /* Type of grid container
+  inline = Only used size of grid based on grid template sizing
+  grid = block element and span the entire width of container
+  */
+    display: grid | inline-grid;
+    /* Tracks - aka a column or a row. */
+    /* 2 columns each 1 fr (fraction of free space) */
     grid-template-columns: 1fr 1fr;
+    /* 2 rows each 100px */
     grid-template-rows: 100px 100px;
     
     /* Gap adds to both columns and rows */
@@ -484,3 +494,44 @@ All **direct** child elements will become a grid element.
 
 [Google Dev tools CSS Grid](https://developer.chrome.com/docs/devtools/css/grid/)
 
+### [Position Grid Elements](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-positioning-grid-elements)
+
+Lines:
+- Grid Lines are 1 indexed and indicate the line between rows/columns
+- used for positioning grid elements
+- Use Dev tools **layout** tab to see grid lines
+
+Cells:
+- Grid cells are 1 indexed and indicate the cell between rows/columns
+
+Positioning:
+```css
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+  }
+
+  .grid-item{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    /* shorthand */
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+
+    /* span */
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+
+    /* area shorthand */
+    grid-area: 1 / 1 / 3 / 3;
+    /* or if we have grid items with #ids of area1, area2, area3*/
+    grid-area:
+     "area1 area1 area1"
+      "area2 area3 area3"
+
+  }
+```
