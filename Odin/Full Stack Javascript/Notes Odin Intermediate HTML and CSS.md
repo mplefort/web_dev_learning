@@ -535,3 +535,28 @@ Positioning:
 
   }
 ```
+
+
+### [Advanced Grid Properties](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-advanced-grid-properties)
+
+Topics:
+  - repeat function - `grid-template-columns: repeat(3, 1fr);`
+  - fr units - fraction of free space
+  - Set min, max, and ideal track size. Using `minmax(min, max)`
+  - auto-fill and auto-fit - dynamic number of rows/columns
+
+
+
+### [Using Flexbox and Grid](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-using-flexbox-and-grid)
+
+Topics:
+  - Know when to flexbox vs Grid
+
+
+#### Content first vs layout first design
+
+If your design comes from the content, start with flexbox.
+
+If your design starts from the layout, and your content will fit into these pretty boxes and not go over. Then use Grid.
+
+
