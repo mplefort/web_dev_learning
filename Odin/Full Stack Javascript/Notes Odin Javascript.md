@@ -115,6 +115,54 @@ const hero2 = new Healer('Kanin', 1, 'cure');
 
 ```
 
+#### this keyword
+  This keyword refers to different objects in different contexts. See examples:
+
+```javascript
+
+  // this refers to the global object
+  console.log(this.document === document); // true
+
+  // In web browsers, the window object is also the global object:
+  console.log(this === window); // true
+
+  this.a = 37;
+  console.log(window.a); // 37
+
+  // this refers to the calling object in a method
+  const obj = {
+    prop: 37,
+    f: function() {
+      return this.prop;
+    },
+  };
+  console.log(obj.f()); // 37
+
+  // this refers to the new object in a constructor
+  function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+  const car1 = new Car('Eagle', 'Talon TSi', 1993);
+
+  // this is set to the object the method is called on
+  const o = {
+    prop: 37,
+    f: function() {
+      return this.prop;
+    },
+  };
+  console.log(o.f()); // 37
+
+  const o = {prop: 37};
+
+  function independent() {
+    return this.prop;
+  }
+  o.f = independent;
+
+```
 
     
 ### [Project: Library](https://www.theodinproject.com/courses/javascript/lessons/library)
