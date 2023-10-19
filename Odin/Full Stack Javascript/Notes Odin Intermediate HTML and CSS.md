@@ -546,6 +546,16 @@ Topics:
   - auto-fill and auto-fit - dynamic number of rows/columns
 
 
+  Use of `auto-fill` and `auto-fit` with `minmax` to create a responsive grid.
+  
+  [Code Pen Auto-Fill/fit](https://codepen.io/TheOdinProjectExamples/pen/abLzzgR)
+    ```css
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 10px;
+    }
+    ```
 
 ### [Using Flexbox and Grid](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-using-flexbox-and-grid)
 
