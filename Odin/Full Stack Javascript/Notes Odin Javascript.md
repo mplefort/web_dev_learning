@@ -212,7 +212,7 @@ Topics:
 
   ```javascript
 // A simple factory function, returns and object there its a factory. No need for New keyword
-const userFactory = function( name) {
+const createUser = function( name) {
   
   const discordName = "@" + name;
 
@@ -224,7 +224,7 @@ const userFactory = function( name) {
   return { name, reputation, discordName, getReputation, giveReputation };
 }
 
-const josh = userFactory("josh");
+const josh = createUser("josh");
 josh.giveReputation();
 josh.giveReputation();
 
@@ -287,22 +287,92 @@ Encapsulation is the idea of bundling data and methods that work on that data wi
 
 ### [Classes](https://www.theodinproject.com/courses/javascript/lessons/classes)
 
+Topics:
+ - Describe the pros and cons of using classes in JavaScript.
+ - Briefly discuss how JavaScript’s object creation differs from a language like Java or Ruby.
+ - Explain the differences between an object constructor and a class.
+ - Explain what “getters” and “setters” are.
+ - Understand what computed names and class fields are.
+ - Explain how to implement private class fields and methods.
+ - Describe function binding.
+ - Use inheritance with classes.
+ - Understand why composition is generally preferred to inheritance.
+
+
+
+#### [MDN Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
+Class element categories are:
+ - Kind: Getter, setter, method, or field
+ - Location: Static or instance
+ - Visibility: Public or private
+
+Class Evaluation order:
+  1. Extends - super class must be defined and evaluated first
+  2. constructor
+  3. class elements property keys in order of declaration.
+  4. Methods and accessors - 
+    - Instance methods/accessors are installed on the `prototype` of the class. 
+    - Static methods/accessors are installed on the class object itself. 
+    - Private instances are on the instance itself.
+  5. class elements then evaluated in order of declaration.
+    - 
 
 ```javascript
 
 class MyClass {
-  constructor() {
+  constructor(name) {
     let _realPrivateVar = 'This is private';
     this._likePrivateVar = 'This is treated as private (convention)';
+    #privateVar = 'This is private (experimental)';
 
     this.getPrivateVar = function() {
-      return _realPrivateVar;
+      return _realPrivateVar || #privateVar;
     };
+
+    this.name = name
   }
 
   publicMethod() {
     return this.getPrivateVar();
   }
+
+  // in order for "this" to point to correct object this, you must use functions
+  refThisFunction = () => {
+    conosle.log(this) // this refers to the class object
+    return this._likePrivateVar
+  }
+  //  check if this works like an arrow function when accessing this properly.
+  refThisFunction2 = function() {
+    return this._likePrivateVar
+  }
+
+  // getter and setter
+  get realPrivateVar() {
+    return this._realPrivateVar;
+  }
+  set realPrivateVar(newVal) {
+    this._realPrivateVar = newVal;
+  }
+
+
+
+  // This is a static method. It is called on the class, not on an object.
+  static staticMethod() {
+    console.log(this) // 'this' is the class itself
+    return 'I am a static method';
+  }
+
+  // This is a static property. Static properties are only available on the class itself.
+  static staticProperty = 'I am a static property';
+  static {
+    anotherStaticProperty = "I'm static too";
+  }
+
+  sayName() {
+    console.log(`Name: ${this.name}`);
+  }
+  
 }
 
 const myObject = new MyClass();
@@ -311,11 +381,159 @@ console.log(myObject._realPrivateVar); // This will be undefined, indicating pri
 console.log(myObject._likePrivateVar); // This is accessible, but it's a convention to treat it as private
 
 
+// inheritance with extends and Super
+
+class subClass extends MyClass {
+  constructor(name) {
+    super(name); // call super class construtor 
+  }
+
+  sayName() {
+    console.log(`subclass name is: ${this.name}`);
+    // then call the super class method
+    super.sayName();
+  
+  }
+}
+
+const d = new subClass("josh");
+d.sayName(); // displays subclass name is: josh
+```
+
+
+
+### [ES6 Modules](https://www.theodinproject.com/courses/javascript/lessons/es6-modules)
+
+Overview:
+ - npm, modules, and webpack
+ - NPM and its use on the frontend
+ - `npm init` and `package.json`
+ - install npm packages
+ - Describe JavaScript module bundler webpack
+ - "entry" and "output" as webpack configuration options
+ - Development dependecy
+ - "transpiling code" 
+ - task runner and its use in front-end
+ - npm automation script
+ - benefits of code modules
+ - "named" exports vs "default" exports
+
+ 
+ Basic workflow of this is: 
+ - use npm to install packages to local env 
+ - use webpack to bundle all the modules into a single file to avoid fetching numerous linked files from sources.
+ - use Babel to transpile the code into a format that is compatible with all browsers. Can use webpack Babel plugin to wrap it into one setup/command to laod
+
+
+#### [NPM](https://www.npmjs.com/)
+
+[Docs](https://docs.npmjs.com/) 
+
+CLI tool for managing packages and dependencies. It is used to install packages from the npm registry. It is also used to run scripts defined in the package.json file.
+
+Generates package.json file for organizing and downloading dependencies pacakges.
+
+```bash
+$ npm init # creates package.json file
+
+# Installing a package, use dev to install to dev envs only
+$ npm install package-name  --dev 
+# Installing using a public scope
+$ npm install @scope/package-name
+
 
 
 ```
 
-### [ES6 Modules](https://www.theodinproject.com/courses/javascript/lessons/es6-modules)
+#### [Yarn](https://classic.yarnpkg.com/en/)
+
+Yarn is an alternative to npm. It is faster and more secure. It is compatible with npm. It uses the same package.json file and the same node_modules folder. It is a drop-in replacement for npm. npm has incorporated many of the Yarn features, so it is not too crucial to use over npm now.
+
+
+#### [Webpack and Bundlers]
+
+[How bundlers work](https://snipcart.com/blog/javascript-module-bundler)
+
+A bundler builds a dependency graph as it traverses from a single entry point.
+
+[Webpack](https://webpack.js.org/)
+
+Setup project like in "Webpack-Getting-Started"
+Compile a webpack project using:
+```bash
+$ npx webpack  --config webpack.config.js
+
+#  or use the npm script build
+$ npm run build
+```
+
+[Webpack Tutorial](https://webpack.js.org/guides/getting-started/)
+
+#### ES6 Modules
+
+ES6 Modules allow you to export code from one file into another and bundle it all together into a single .js file using webpack. This is useful for organizing your code into separate files. It is also useful for sharing code between projects.
+
+You can use named exports or default exports. A named export is more explicit on what you define as being exported, and the default is that, defaults the export and is the default import in the other file.
+
+<!-- Give small example to export a named and default and import it in another module -->
+
+Exporting modules:
+```javascript
+
+// myModule.js
+// export named exports
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+
+// export default export
+export default function (a, b) {
+  return a * b;
+}
+
+// Define a class
+export class Car {
+  constructor(make, model) {
+    this.make = make;
+    this.model = model;
+  }
+
+  displayInfo() {
+    console.log(`Car: ${this.make} ${this.model}`);
+  }
+}
+
+// Export other values as well
+export const someVar = 42;
+
+export function someFunction() {
+  return 'Hello from someFunction';
+}
+
+// alternatively you can leave out export and use export at the end of the file
+export { add, subtract, Car, someVar, someFunction };
+
+
+// anotherModule.js
+
+// Import the Car class along with other named exports
+import { Car, someVar, someFunction, add, subtract } from './myModule';
+import multiply from './myModule'; // will default to the default export
+
+
+// Use the named exports
+console.log(add(1, 2)); // Output: 3
+console.log(subtract(5, 2)); // Output: 3
+
+// Create an instance of the Car class
+const myCar = new Car('Toyota', 'Camry');
+myCar.displayInfo(); // Output: Car: Toyota Camry
+
+console.log(someVar); // Output: 42
+console.log(someFunction()); // Output: Hello from someFunction
+
+```
+
+
 
 ### [Webpack](https://www.theodinproject.com/courses/javascript/lessons/webpack)
 
